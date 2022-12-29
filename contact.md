@@ -1,6 +1,7 @@
+---
 layout: page
 title: "contact"
-permalink: /contact
+permalink: /contact/
+---
 
-
-### Test Contact Page
+Test Content Page
