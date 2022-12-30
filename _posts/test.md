@@ -1,12 +1,9 @@
----
-layout: post
-title: "Machine Learning for Signal Propagation"
-date: 2022-11-01
-categories: projects
-featured_image: FSPL.svg
-excerpt_separator: <!--more-->
----
-I was interested in exploring the feasibility of performing signal propagation modeling on a mobile device. While signal propagation modeling is not a new field (it dates back to the 1950’s), the concept of doing so accurately *and* in a computationally-constrained environment is fairly novel. <!--more--> Most simulation packages are firmly focused on accuracy above all else and can only be run in a dedicated desktop environment. I was interested in developing an application that could do the following:
+
+# Developing a Surrogate Modeling-Based Signal Propagation Model
+
+Background / Motivation:
+
+I was interested in exploring the feasibility of performing signal propagation modeling on a mobile device. While signal propagation modeling is not a new field (it dates back to the 1950’s), the concept of doing so accurately *and *in a computationally-constrained environment is fairly novel. Most simulation packages are firmly focused on accuracy above all else and can only be run in a dedicated desktop environment. I was interested in developing an application that could do the following:
 
 * Perform calculations on a mobile device in a reasonable timeframe
 
@@ -24,10 +21,7 @@ As mentioned above, the two main features of the algorithm I care about are runt
 
 The algorithm I selected for baselining was Free-Space Path Loss (FSPL). Free-Space Path Loss refers to the loss in signal energy as a signal passes through a direct, obstacle-free path. This is a classic inverse square law equation, where intensity drops off proportional to the inverse square of distance. While proprietary commercial models have higher performance, FSPL provides a simple, ball-park baseline for comparison purposes.
 
-![Visual Intuition Behind FSPL](https://cdn-images-1.medium.com/max/3840/1*u2Mu0eiDdHJHoXWJ-CdckQ.png) 
-
-{:.imageSubscript} 
-Visual Intuition Behind FSPL
+![Visual Intuition Behind FSPL](https://cdn-images-1.medium.com/max/3840/1*u2Mu0eiDdHJHoXWJ-CdckQ.png)*Visual Intuition Behind FSPL*
 
 The FSPL algorithm is an O(n) algorithm, with n corresponding to the number of points where the algorithm predicts signal intensity. This algorithm is ignorant of any obstacles encountered by the signal, and therefore will be a baseline I strive to improve upon. Below is the equation for FSPL, using km for distance and GHz for the frequency:
 
@@ -45,10 +39,7 @@ I used a fairly robust [dataset](https://www.ofcom.org.uk/__data/assets/pdf_file
 
 For the elevation data I used Digital Terrain Elevation Data **(DTED) **acquired from the 2000 Shuttle Radar Terrain Mapping **(SRTM)** mission. Specifically, the 1 Arc Second resolution data (~1 sample every 30 m). The data was pulled from the United States Geological Survey’s [EarthExplorer](https://earthexplorer.usgs.gov).
 
-![USGS’s EarthExplorer](https://cdn-images-1.medium.com/max/3200/1*cAAX1ThvaYA0SK8VjKrkNA.png)
-
-{:.imageSubscript} 
-USGS’s EarthExplorer
+![USGS’s EarthExplorer](https://cdn-images-1.medium.com/max/3200/1*cAAX1ThvaYA0SK8VjKrkNA.png)*USGS’s EarthExplorer*
 
 After merging the two datasets I had the following features for each measured point:
 
@@ -112,11 +103,7 @@ I chose two medium sized cities for the smaller sets: Merthyr for cross validati
 
 Boosted Tree Ensembles are fairly distinct from the other two model architectures, so I started there. I usedXGBoost (eXtreme Gradient Boosting) an open source implementation for building my model. It has proven to be highly competitive in ML competitions such as those hosted by Kaggle and has training times orders of magnitude faster than traditional ML architectures. A non-customized model also requires almost no code, as can be seen below:
 
-```python3
-default_tree_model = XGBRegressor()
-
-default_tree_model.fit(train_X, train_Y)
-```
+<iframe src="https://medium.com/media/57e294d8b55325b105ca8975ab6df424" frameborder=0></iframe>
 
 This first TreeEnsemble achieved a Mean Average Error (MAE) of 10.26 dB, a strong improvement over FSPL’s MAE of 33.2 dB on the same dataset!
 

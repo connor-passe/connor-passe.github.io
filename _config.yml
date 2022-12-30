@@ -21,9 +21,7 @@
 title: Connor Passe
 email: connor.r.passe@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a software engineer in Durham, North Carolina 
-  who's led teams to develope machine learning algorithms for the Department of Defense,
-  design integrated surgical tools for eye surgery, and retool databases for a private jet company.
+  Connor is originally from Minnesota and enjoys playing basketball, volleyball, surfing, and watching Duke Basketball crush UNC.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://connorpasse.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: connor-passe
@@ -31,6 +29,7 @@ linkedin_username: connor-passe
 show_excerpts: true
 
 # Build settings
+
 theme: minima
 plugins:
   - jekyll-feed

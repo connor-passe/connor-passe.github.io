@@ -4,4 +4,4 @@ title: "Contact"
 permalink: /contact/
 ---
 
-Test Content Page
+The best way to reach me is via email: connor.r.passe@gmail.com
