@@ -6,39 +6,45 @@ list_title: Cats
 
 <div class="home">
   {% if page.title %}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {% endif %} 
-  {{ content }} 
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {% endif %}
+  {{ content }}
+  <div class="top-box">
+    <div class="left-side">
+      <div class="header">Hey, I'm Connor - A Software Engineer based in Durham.</div>
+      <div class="subHeader">I've led teams to design integrated surgical tools for eye surgery, retool databases for a
+        private jet company, and am currently developing machine learning algorithms for the Department of Defense.
+      </div>
+    </div>
+  </div>
   {% if site.posts.size > 0 %}
-    <h2 class="post-list-heading">
-      {{ page.list_title | default: "Featured Work" }}
-    </h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-      <li>
-        <div>
-          {% assign date_format = site.minima.date_format 
-            | default: "%b %-d, %Y" %}
-          <span class="post-meta">
-            {{ post.date | date: date_format }}
-          </span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          {% if site.show_excerpts %} 
-            {{ post.excerpt }} {% endif %}
-        </div>
-        {% if post.featured_image %}
-        <div class="featured-image">
-          <img
-            src="{{ '/assets/images/' | append: post.featured_image | relative_url }}"
-          />
-        </div>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+  <h2 class="post-list-heading">
+    {{ page.list_title | default: "Featured Work" }}
+  </h2>
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <div>
+        {% assign date_format = site.minima.date_format
+        | default: "%b %-d, %Y" %}
+        <span class="post-meta">
+          {{ post.date | date: date_format }}
+        </span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {% if site.show_excerpts %}
+        {{ post.excerpt }} {% endif %}
+      </div>
+      {% if post.featured_image %}
+      <div class="featured-image">
+        <img src="{{ '/assets/images/' | append: post.featured_image | relative_url }}" />
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
   {% endif %}
 </div>
