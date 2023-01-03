@@ -4,27 +4,26 @@
 
 @import "minima";
 
-html {
+.site-header a:hover, .site-header a:focus {
   text-decoration: none;
 }
 
-.post-list > li {
-    display: flex;
-    flex-wrap: wrap-reverse;
-  
-    div:first-child {
-      flex: 4 0 200px;
-    }
-    .featured-image {
-      flex: 1 0 200px;
-      margin-bottom: 0;
-    }
+.site-title {
+  font-weight: bold;
+  color: black;
+}
+
+.page-link {
+  font-weight: bold;
+}
+
+.site-header {
+  border-bottom: 1px solid black;
 }
 
 .imageSubscript {
     text-align: center;
 }
-
 
 .top-box {
   margin: 22rem 0 22rem 0;
@@ -68,6 +67,7 @@ html {
   grid-auto-rows: 1fr;
   column-gap: 30px;
   row-gap: 30px;
+  margin-bottom: 10rem;
 }
 
 .work-container {
@@ -102,7 +102,7 @@ html {
 }
 
 .featured-image {
-  max-height: 200px;
+  max-height: 250px;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

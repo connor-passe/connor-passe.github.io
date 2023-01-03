@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Illuminated Scleral Depressor for Retina Surgery"
-date: 2022-11-01
+title: "Vitreoretinal Surgical Medical Device"
+date: 2021-05-05
 categories: projects
 featured_image: depressor.jpeg
 excerpt_separator: <!--more-->
