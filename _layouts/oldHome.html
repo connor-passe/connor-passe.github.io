@@ -1,0 +1,50 @@
+---
+layout: default
+list_title: Cats
+---
+
+
+<div class="home">
+  {% if page.title %}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {% endif %}
+  {{ content }}
+  <div class="top-box">
+      <div class="header">Hey, I'm Connor - A Software Engineer based in Durham.</div>
+      <img class="profilePic" src="/assets/images/me.jpeg" alt="handsome picture of Connor">
+      <div class="subHeader">I've led teams to design integrated surgical tools for eye surgery, retool databases for a
+        private jet company, and am currently developing machine learning algorithms for the Department of Defense.
+      </div>
+      <div class="emailTagline">connor.r.passe@gmail.com</div>
+  </div>
+  {% if site.posts.size > 0 %}
+  <h2 class="work-heading">
+    {{ page.list_title | default: "Featured Work" }}
+  </h2>
+  <div class="work-list">
+    {% for post in site.posts %}
+    <div class="work-card">
+      <div>
+        {% assign date_format = site.minima.date_format
+        | default: "%b %-d, %Y" %}
+        <span class="post-meta">
+          {{ post.date | date: date_format }}
+        </span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {% if site.show_excerpts %}
+        {{ post.excerpt }} {% endif %}
+      </div>
+      {% if post.featured_image %}
+      <div class="featured-image">
+        <img src="{{ '/assets/images/' | append: post.featured_image | relative_url }}" />
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
