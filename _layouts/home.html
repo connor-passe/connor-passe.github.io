@@ -10,20 +10,20 @@ list_title: Cats
   {% endif %}
   {{ content }}
   <div class="top-box">
-    <div class="left-side">
       <div class="header">Hey, I'm Connor - A Software Engineer based in Durham.</div>
+      <img class="profilePic" src="/assets/images/me.jpeg" alt="handsome picture of Connor">
       <div class="subHeader">I've led teams to design integrated surgical tools for eye surgery, retool databases for a
         private jet company, and am currently developing machine learning algorithms for the Department of Defense.
       </div>
-    </div>
+      <div class="emailTagline">connor.r.passe@gmail.com</div>
   </div>
   {% if site.posts.size > 0 %}
-  <h2 class="post-list-heading">
+  <h2 class="work-heading">
     {{ page.list_title | default: "Featured Work" }}
   </h2>
-  <ul class="post-list">
+  <div class="work-list">
     {% for post in site.posts %}
-    <li>
+    <div class="work-card">
       <div>
         {% assign date_format = site.minima.date_format
         | default: "%b %-d, %Y" %}
@@ -43,8 +43,8 @@ list_title: Cats
         <img src="{{ '/assets/images/' | append: post.featured_image | relative_url }}" />
       </div>
       {% endif %}
-    </li>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
   {% endif %}
 </div>
