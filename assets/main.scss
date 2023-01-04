@@ -25,26 +25,26 @@
 
 a:link {
   color: black; 
-  text-decoration: underline solid black;
+  text-decoration: underline;
 }
 
 a:visited {
   color: black;
-  text-decoration: underline solid black;
+  text-decoration: underline;
 }
 
 a:hover {
   color: black;
-  text-decoration: underline solid black;
+  text-decoration: underline;
 }
 
 a:active {
   color: black;
-  text-decoration: underline solid black;
+  text-decoration: underline;
 }
 
 .top-box {
-  margin: 22rem 0 22rem 0;
+  margin: 20vh 0 20vh 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -71,6 +71,12 @@ a:active {
   grid-column: 2 / 3;
   grid-row: 1 / -1;
   justify-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .profilePic {
+      display: none;
+  }
 }
 
 .work-heading {
