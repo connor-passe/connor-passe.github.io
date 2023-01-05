@@ -21,7 +21,9 @@
 title: Connor Passe
 email: connor.r.passe@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Connor is originally from Minnesota and enjoys playing basketball, volleyball, surfing, and watching Duke Basketball crush UNC.
+  I've led teams to design integrated surgical tools for eye surgery,
+   retool databases for a private jet company, 
+   and am currently developing machine learning algorithms for the Department of Defense.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://connorpasse.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: connor-passe
