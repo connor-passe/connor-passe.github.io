@@ -4,12 +4,3 @@
 
 layout: home
 ---
-
-Here is the hosted video file:
-
-- [SabrinaCarpenter.mov](/assets/SabrinaCarpenter.mov)
-
-<video controls preload="metadata" width="720">
-  <source src="/assets/SabrinaCarpenter.mov" type="video/quicktime">
-  Your browser does not support the video tag. You can download it using the link above.
-</video>
